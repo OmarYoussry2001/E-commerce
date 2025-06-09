@@ -11,9 +11,7 @@ namespace BL.Constants
         public static class Roles
         {
             public const string Customer = "User";
-            public const string Company = "Company";
             public const string Admin = "Admin";
-            public const string Employee = "Employee";
         }
 
         public const string StatusPending = "Pending";

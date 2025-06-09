@@ -333,7 +333,9 @@ namespace DAL.ApplicationContext
                     InstagramLink = "https://instagram.com/velvora",
                     YoutubeLink = "https://youtube.com/velvora",
                     Address = "123 شارع النيل، القاهرة، مصر",
-                    ContactNumber = "+201127382518"
+                    ContactNumber = "+201127382518",
+                    Email = "omarsunbati@gmail.com",
+                    Fax = "+2 3648638"
 
                 };
 

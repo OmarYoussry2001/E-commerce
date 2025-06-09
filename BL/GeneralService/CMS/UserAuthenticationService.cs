@@ -27,8 +27,6 @@ namespace BL.GeneralService.CMS
         }
         public async Task<BaseResult> RegisterUserAsync(RegisterDto registerDto)
         {
-            //var user = _mapper.MapModel<RegisterDto, ApplicationUser>(registerDto);
-
 
             var user = new ApplicationUser()
             {
