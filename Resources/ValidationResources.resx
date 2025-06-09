@@ -540,4 +540,7 @@
   <data name="PriceLength" xml:space="preserve">
     <value>هذا الحقل يجب ان يكون بين 1 و 100000000</value>
   </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>البريد الإلكتروني أو كلمة المرور غير صحيحة</value>
+  </data>
 </root>

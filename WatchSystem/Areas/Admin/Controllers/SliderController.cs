@@ -33,7 +33,6 @@ namespace UI.Area.Admin.Controllers
                 return HandleException(ex);
             }
         }
-
         public IActionResult Edit(Guid id)
         {
             try
@@ -55,6 +54,7 @@ namespace UI.Area.Admin.Controllers
             }
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Save(SliderDto entity)
         {
 

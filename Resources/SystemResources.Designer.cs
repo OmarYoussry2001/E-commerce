@@ -566,7 +566,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to اذهب إلى لوحة الإدارة.
+        ///   Looks up a localized string similar to اذهب إلى لوحة التحكم.
         /// </summary>
         public static string GoToAdminPanel {
             get {
@@ -602,7 +602,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to مطور .NET شغوف بالتعلم، أتمتع بخبرة قوية في تطوير تطبيقات الويب باستخدام MVC و Web API، وأتقن التعامل مع Entity Framework و LINQ. أحب بناء حلول نظيفة ومنظمة باستخدام الطبقات (N-Layer Architecture).
+        ///   Looks up a localized string similar to مطور .NET شغوف بالتعلم، أتمتع بخبرة قوية في تطوير تطبيقات الويب باستخدام MVC و Web API، وأتقن التعامل مع Entity Framework و LINQ..
         /// </summary>
         public static string IAmaPassionateJuniorDotNetDeveloperWithHandsOnExperienceInBuildingWebApplicationsUsingAspNetMvcAndEntityFramework {
             get {

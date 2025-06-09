@@ -400,7 +400,7 @@
     <value>مطوّر .NET</value>
   </data>
   <data name="IAmaPassionateJuniorDotNetDeveloperWithHandsOnExperienceInBuildingWebApplicationsUsingAspNetMvcAndEntityFramework" xml:space="preserve">
-    <value>مطور .NET شغوف بالتعلم، أتمتع بخبرة قوية في تطوير تطبيقات الويب باستخدام MVC و Web API، وأتقن التعامل مع Entity Framework و LINQ. أحب بناء حلول نظيفة ومنظمة باستخدام الطبقات (N-Layer Architecture)</value>
+    <value>مطور .NET شغوف بالتعلم، أتمتع بخبرة قوية في تطوير تطبيقات الويب باستخدام MVC و Web API، وأتقن التعامل مع Entity Framework و LINQ.</value>
   </data>
   <data name="BestSellers" xml:space="preserve">
     <value>الأكثر مبيعًا</value>
@@ -454,7 +454,7 @@
     <value>من نحن</value>
   </data>
   <data name="GoToAdminPanel" xml:space="preserve">
-    <value>اذهب إلى لوحة الإدارة</value>
+    <value>اذهب إلى لوحة التحكم</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفاصيل</value>

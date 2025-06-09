@@ -23,7 +23,6 @@ namespace BL.Services
         private readonly IFileUploadService _fileUploadService;
         private readonly IImageProcessingService _imageProcessingService;
         private readonly IItemService _itemService;
-
         
         public SalesInvoiceService( IUnitOfWork unitOfWork, IFileUploadService fileUploadService, IImageProcessingService imageProcessingService, IItemService itemService, IBaseMapper mapper) : base(unitOfWork.TableRepository<TbSalesInvoice>(), mapper)
         {
@@ -33,7 +32,6 @@ namespace BL.Services
             _mapper = mapper;
             _itemService = itemService;
         }
-
        async Task<bool> ISalesInvoiceService.Save(SalesInvoiceDto dto, Guid userId)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));

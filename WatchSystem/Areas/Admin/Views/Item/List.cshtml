@@ -33,7 +33,6 @@
 					<th> @SystemResources.SoldCount </th>
 					<th> @SystemResources.DiscountPercent </th>
 					<th> @SystemResources.TypeName </th>
-
 					<th>ِ@ActionsResources.Action</th>
 				
 
@@ -48,10 +47,10 @@
 
 
 	<script>
-	    function Delete(url) {
+		function Delete(url) {
 			Swal.fire({
 				title: '@NotifiAndAlertsResources.AreYouSure',
-				text: "YouWontBeAbleToRevertThis",
+				text: "@Html.Raw(NotifiAndAlertsResources.YouWontBeAbleToRevertThis)",
 				icon: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#3085d6',

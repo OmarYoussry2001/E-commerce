@@ -20,24 +20,23 @@ namespace WatchSystem.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-     
 
         [HttpPost]
         [AllowAnonymous]
         public IActionResult Localization()
         {
             ResourceManager.CurrentLanguage = ResourceManager.CurrentLanguage == Language.Arabic ? Language.English : Language.Arabic;
-
             return Ok();
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

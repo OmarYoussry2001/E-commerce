@@ -53,6 +53,7 @@ namespace UI.Area.Admin.Controllers
             }
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Save(TypeDto entity)
         {
 

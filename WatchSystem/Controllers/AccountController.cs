@@ -35,23 +35,26 @@ namespace WatchSystem.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Register()
         {
-            var userRegister = new RegisterDto()
+         
+            try
             {
-                Roles = await _roleManagementService.GetAllRolesAsync(),
-          
-            };
+                var userRegister = new RegisterDto()
+                {
+                    Roles = await _roleManagementService.GetAllRolesAsync(),
+                };
 
-
-            return View("Register", userRegister);
-
+                return View("Register", userRegister);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Register(RegisterDto registerDTO)
         {
-            //ModelState.Remove(nameof(registerDTO.Roles));
             try
             {
                 if (!ModelState.IsValid)
@@ -79,20 +82,25 @@ namespace WatchSystem.Controllers
 
         }
 
-
         [HttpGet]
         public IActionResult Login(string? ReturnUrl)
         {
-            //ViewData["ReturnUrl"] = ReturnUrl;
-            return View("Login", new LoginDto { ReturnUrl = ReturnUrl ?? "" });
+            try
+            {
+                return View("Login", new LoginDto { ReturnUrl = ReturnUrl ?? "" });
+
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Login(LoginDto loginDTO)
         {
-            //ModelState.Remove(nameof(loginDTO.ReturnUrl));
 
             if (!ModelState.IsValid)
                 return View("Login", loginDTO);
@@ -123,18 +131,30 @@ namespace WatchSystem.Controllers
 
         }
 
-
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            _userAuthenticationService.SignOutAsync();
-
-            return View("Login");
-
+            try
+            {
+                await _userAuthenticationService.SignOutAsync();
+                return RedirectToAction("Login");
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+    
         }
         public IActionResult AccessDenied()
         {
+            try
+            {
+                return View("AccessDenied");
 
-            return View("AccessDenied");
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
         }
 
 

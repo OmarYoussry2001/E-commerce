@@ -18,7 +18,6 @@ namespace WatchSystem.Areas.Admin.Controllers
         private readonly IImageService _imageService;
         private readonly IDescriptionService _descriptionService;
 
-
         public ItemController(IItemService itemService, ITypeService typeService  , IDescriptionService descriptionService,  IImageService imageService, Serilog.ILogger logger) : base(logger)
         {
             _itemService = itemService;
@@ -65,7 +64,6 @@ namespace WatchSystem.Areas.Admin.Controllers
                 return HandleException(ex);
             }
         }
-
         public IActionResult Edit(Guid id)
         {
             try
@@ -90,6 +88,7 @@ namespace WatchSystem.Areas.Admin.Controllers
             }
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Save(ItemDto entity)
         {
 

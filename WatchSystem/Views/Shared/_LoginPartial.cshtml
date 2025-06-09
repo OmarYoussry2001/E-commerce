@@ -13,18 +13,16 @@
             </a>
         </li>
         <li class="nav-item">
-            <form id="logoutForm" class="form-inline" method="post" asp-controller="Account" asp-action="Logout">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0 text-dark">@ActionsResources.Logout</button>
-            </form>
+            <a class="nav-link text-dark" id="register" href="/Account/Logout">@ActionsResources.Logout</a>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-white" id="register" asp-controller="Account" asp-action="Register">@ActionsResources.Register</a>
+            <a class="nav-link text-dark" id="register" asp-controller="Account" asp-action="Register">@ActionsResources.Register</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" id="login" asp-controller="Account" asp-action="Login">@ActionsResources.Login</a>
+            <a class="nav-link text-dark" id="login" asp-controller="Account" asp-action="Login">@ActionsResources.Login</a>
         </li>
     }
 </ul>

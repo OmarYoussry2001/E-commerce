@@ -115,15 +115,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to الوصف بالعربية.
-        /// </summary>
-        public static string ArabicDescription {
-            get {
-                return ResourceManager.GetString("ArabicDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to الأسم بالعربية.
         /// </summary>
         public static string ArabicName {
@@ -331,6 +322,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الوصف بالعربية.
+        /// </summary>
+        public static string DescriptionAr {
+            get {
+                return ResourceManager.GetString("DescriptionAr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الوصف بالإنجليزية.
+        /// </summary>
+        public static string DescriptionEn {
+            get {
+                return ResourceManager.GetString("DescriptionEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مطلق.
         /// </summary>
         public static string Divorced {
@@ -390,15 +399,6 @@ namespace Resources {
         public static string EnglishContent {
             get {
                 return ResourceManager.GetString("EnglishContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to الوصف بالإنجليزية.
-        /// </summary>
-        public static string EnglishDescription {
-            get {
-                return ResourceManager.GetString("EnglishDescription", resourceCulture);
             }
         }
         

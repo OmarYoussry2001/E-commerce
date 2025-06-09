@@ -9,8 +9,8 @@ namespace Bl.DTO.User
 {
     public class RegisterDto : BaseDto
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(ValidationResources))]
+        [EmailAddress(ErrorMessageResourceName = "EmailInvalid", ErrorMessageResourceType = typeof(ValidationResources))]
         public string Email { get; set; }
 
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(ValidationResources))]
@@ -19,7 +19,6 @@ namespace Bl.DTO.User
         public string LastName { get; set; } = null!;
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(ValidationResources))]
         public string City { get; set; } = null!;
-
 
         [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(ValidationResources))]
         [DataType(DataType.Password)]

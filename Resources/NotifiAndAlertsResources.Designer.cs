@@ -959,5 +959,14 @@ namespace Resources {
                 return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لن تتمكن من التراجع عن هذا.
+        /// </summary>
+        public static string YouWontBeAbleToRevertThis {
+            get {
+                return ResourceManager.GetString("YouWontBeAbleToRevertThis", resourceCulture);
+            }
+        }
     }
 }

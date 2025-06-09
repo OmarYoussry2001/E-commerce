@@ -46,6 +46,9 @@ namespace UI.Area.Admin.Controllers
                     entity = _settingsService.FindById(id);
                 }
 
+                if (entity.Id == default)
+                    RedirectToAction("List");
+
                 return View(entity);
             }
 
@@ -55,6 +58,7 @@ namespace UI.Area.Admin.Controllers
             }
         }
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Save(SettingsDto entity)
         {
 
@@ -88,25 +92,6 @@ namespace UI.Area.Admin.Controllers
 
 
         }
-        public IActionResult Delete(Guid id)
-        {
-            if (id == Guid.Empty)
-            {
-                TempData["ErrorMessage"] = NotifiAndAlertsResources.DeleteFailed;
-                return RedirectToAction("List");
-            }
-
-            try
-            {
-                _settingsService.Delete(id);
-                TempData["SuccessMessage"] = NotifiAndAlertsResources.DeletedSuccessfully;
-            }
-            catch (Exception ex)
-            {
-                return HandleException(ex);
-            }
-
-            return RedirectToAction("List");
-        }
+      
     }
 }

@@ -40,7 +40,6 @@ namespace BL.Services
 
             return base.Save(dto, userId);
         }
-
         private async Task<string> ProcessAndUploadImage(byte[] imageBytes, string? oldImagePath, string nameFolder)
         {
             //  Resize and convert image to WebP
@@ -53,10 +52,8 @@ namespace BL.Services
             //  Upload new image and update path
             return await _fileUploadService.UploadFileAsync(resized, nameFolder, oldFileName);
         }
-
         public SettingsDto GetSettings()
         {
-
             var entity = _baseTableRepository.GetAll().FirstOrDefault();
             var dto = _mapper.MapModel<TbSettings, SettingsDto>(entity);
             return dto;

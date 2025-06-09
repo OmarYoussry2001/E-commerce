@@ -358,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هذا الحقل يجب أن يكون بين 1% و 100%.
+        /// </summary>
+        public static string DiscountPercentLength {
+            get {
+                return ResourceManager.GetString("DiscountPercentLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت.
         /// </summary>
         public static string Done {
@@ -453,6 +462,15 @@ namespace Resources {
         public static string Failed {
             get {
                 return ResourceManager.GetString("Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هذا الحقل يجب أن يكون بين 2 و 100 حرف.
+        /// </summary>
+        public static string FieldLength {
+            get {
+                return ResourceManager.GetString("FieldLength", resourceCulture);
             }
         }
         
@@ -570,6 +588,15 @@ namespace Resources {
         public static string InstagramInvalid {
             get {
                 return ResourceManager.GetString("InstagramInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to البريد الإلكتروني أو كلمة المرور غير صحيحة.
+        /// </summary>
+        public static string InvalidEmailOrPassword {
+            get {
+                return ResourceManager.GetString("InvalidEmailOrPassword", resourceCulture);
             }
         }
         
@@ -925,6 +952,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هذا الحقل يجب ان يكون بين 1 و 100000000.
+        /// </summary>
+        public static string PriceLength {
+            get {
+                return ResourceManager.GetString("PriceLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to يجب اضافة السعر..
         /// </summary>
         public static string PriceMustBeAdded {
@@ -966,6 +1002,15 @@ namespace Resources {
         public static string PropertyTypeIdRequired {
             get {
                 return ResourceManager.GetString("PropertyTypeIdRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هذا الحقل يجب ان يكون بين 1 و 10 .
+        /// </summary>
+        public static string RangeDisplayOrder {
+            get {
+                return ResourceManager.GetString("RangeDisplayOrder", resourceCulture);
             }
         }
         
@@ -1141,7 +1186,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to العنوان العربي يجب أن يكون بين 2 و 200 حرف..
+        ///   Looks up a localized string similar to العنوان العربي يجب أن يكون بين 2 و 100حرف..
         /// </summary>
         public static string TitleArLength {
             get {
@@ -1159,7 +1204,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to العنوان الإنجليزي يجب أن يكون بين 2 و 200 حرف..
+        ///   Looks up a localized string similar to العنوان الإنجليزي يجب أن يكون بين 2 و 100 حرف..
         /// </summary>
         public static string TitleEnLength {
             get {

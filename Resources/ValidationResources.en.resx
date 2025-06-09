@@ -540,4 +540,7 @@
   <data name="PriceLength" xml:space="preserve">
     <value>This field must be between 1 and 100000000</value>
   </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>Invalid email or password</value>
+  </data>
 </root>

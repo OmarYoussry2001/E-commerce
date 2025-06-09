@@ -34,8 +34,8 @@ namespace WatchSystem.Controllers
                 shoppingCartIGeneral = JsonConvert.DeserializeObject<ShoppingCartIGeneral>(HttpContext.Request.Cookies["Cart"]);
             else
                 shoppingCartIGeneral = new ShoppingCartIGeneral();
-            return View(shoppingCartIGeneral);
 
+            return View(shoppingCartIGeneral);
         }
         [HttpPost]
         public IActionResult UpdateCartQuantity([FromBody] UpdateCartQtyModel model)
@@ -58,12 +58,6 @@ namespace WatchSystem.Controllers
             return Ok();
         }
 
-        public class UpdateCartQtyModel
-        {
-            public Guid ItemId { get; set; }
-            public int Qty { get; set; }
-        }
-
         public IActionResult AddToCart(Guid id)
         {
             try
@@ -73,7 +67,6 @@ namespace WatchSystem.Controllers
             }
             catch (Exception ex)
             {
-                // Log error (e.g., using ILogger)
                 return RedirectToAction("Error", new { message = "Failed to add item to cart." });
             }
         }
@@ -82,7 +75,6 @@ namespace WatchSystem.Controllers
         public async Task<IActionResult> OrderSuccess()
         {
             try
-
             {
                 ShoppingCartIGeneral shoppingCartIGeneral;
                 if (HttpContext.Request.Cookies["Cart"] != null)
@@ -102,10 +94,8 @@ namespace WatchSystem.Controllers
 
 
         }
-
-      private async Task SaveOrder(ShoppingCartIGeneral shoppingCartIGeneral)
+       private async Task SaveOrder(ShoppingCartIGeneral shoppingCartIGeneral)
         {
-
                 SalesInvoiceDto tbSalesInvoice = new SalesInvoiceDto();
                 tbSalesInvoice.SalesInvoiceItems = _cartService.MapCartItemsToInvoiceItems(shoppingCartIGeneral);
                 tbSalesInvoice.InvoiceDate = DateTime.Now;
@@ -113,8 +103,6 @@ namespace WatchSystem.Controllers
                 tbSalesInvoice.DeliveryDate = DateTime.Now.AddDays(2);
                 tbSalesInvoice.InvoiceDate = DateTime.Now;
                 await _salesInvoiceService.Save(tbSalesInvoice, GuidUserId);
-
-
         }
     }
 

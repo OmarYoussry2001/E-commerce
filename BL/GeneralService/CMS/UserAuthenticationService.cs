@@ -78,7 +78,7 @@ namespace BL.GeneralService.CMS
             }
 
             //return new BaseResult { Success = false, Errors = ["Invalid email or password."] };
-            return new BaseResult { Success = false, Message = "Invalid email or password." };
+            return new BaseResult { Success = false, Message = @ValidationResources.InvalidEmailOrPassword };
         }
         public async Task<bool> IsUserAuthorizedAsync(ApplicationUser user, string policy)
         {

@@ -30,21 +30,36 @@ namespace WatchSystem.Controllers
 
         public IActionResult Index()
         {
-            VmHomePage vmHomePage = new VmHomePage();
+            try
+            {
+                VmHomePage vmHomePage = new VmHomePage();
+                vmHomePage.SpecialOffers = _itemService.GetSpecialOffers();
+                vmHomePage.NewItems = _itemService.GetNewItems();
+                vmHomePage.BestSellers = _itemService.GetBestSellers();
+                vmHomePage.FeaturedProducts = _itemService.GetFeaturedProducts();
+                vmHomePage.AllItems = _itemService.GetAllItems();
+                vmHomePage.ItemTypes = _typeService.GetAll().Take(4).ToList();
+                vmHomePage.Sliders = _sliderService.GetAll().Take(4).ToList();
 
-            vmHomePage.SpecialOffers = _itemService.GetSpecialOffers();
-            vmHomePage.NewItems = _itemService.GetNewItems();
-            vmHomePage.BestSellers = _itemService.GetBestSellers();
-            vmHomePage.FeaturedProducts = _itemService.GetFeaturedProducts();
-            vmHomePage.AllItems = _itemService.GetAllItems();
-            vmHomePage.ItemTypes = _typeService.GetAll().Take(4).ToList();
-            vmHomePage.Sliders = _sliderService.GetAll().Take(4).ToList();
-
-            return View(vmHomePage);
+                return View(vmHomePage);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+   
         }
         public IActionResult AboutUs()
         {
-            return View();
+            try
+            {
+                return View();
+
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
         }
 
         public IActionResult ContactUs()
@@ -58,9 +73,16 @@ namespace WatchSystem.Controllers
         }
         public IActionResult Product()
         {
-            VmHomePage vmHomePage = new VmHomePage();
-            vmHomePage.AllItems = _itemService.GetAllItems();
-            return View(vmHomePage);
+            try
+            {
+                VmHomePage vmHomePage = new VmHomePage();
+                vmHomePage.AllItems = _itemService.GetAllItems();
+                return View(vmHomePage);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            };
         }
      
 
