@@ -1,0 +1,165 @@
+﻿
+@model ShoppingCartIGeneral
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>@SystemResources.cart</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">@SystemResources.Home</li>
+                        <li class="breadcrumb-item active">@SystemResources.cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!--section start-->
+<section class="cart-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table cart-table table-responsive-xs">
+                    <thead>
+                        <tr class="table-head">
+                            <th scope="col">@FormResources.Image</th>
+                            <th scope="col">@FormResources.Name</th>
+                            <th scope="col">@FormResources.Price</th>
+                            <th scope="col">@SystemResources.Quantity</th>
+                         
+                            <th scope="col">@SystemResources.total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ShoppingCartItems)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="#"><img src="~/uploads/Images/@item.ImagePath" width="100px" alt=""></a>
+                                </td>
+                                <td>
+                                    <a href="#">@item.ItemName</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input type="text" name="quantity" class="form-control input-number qty"
+                                                           value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">$63.00</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                <td>
+                                    <h2>$@item.Price</h2>
+                                </td>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            
+                                <td>
+                                    <div class="qty-box">
+                                        <div class="input-group">
+                                            <input type="number" name="quantity"
+                                                   class="form-control input-number qty"
+                                                   data-id="@item.ShoppingCartItemID" data-price="@item.Price"
+                                                   value="@item.Qty" onkeyup="ChangeQty(this)">
+                                        </div>
+                                    </div>
+                                </td>
+  
+                                <td>
+                                    <h2 data-id="@item.ShoppingCartItemID" class="td-color totalPrice">@item.Total</h2>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+                <table class="table cart-table table-responsive-md">
+                    <tfoot>
+                        <tr>
+                    <td>@SystemResources.TotalPrice :</td>
+                            <td>
+                                <h2 id="OverAllTotal">$@Model.Total</h2>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row cart-buttons">
+        <div class="col-6"><a href="/Item/ItemDetails?id=@Model.ShoppingCartItems.Last().ShoppingCartItemID" class="btn btn-solid">Go to Back</a></div>
+        <div class="col-6"><a href="/Order/OrderSuccess" class="btn btn-solid">check out</a></div>
+        </div>
+    </div>
+</section>
+<!--section end-->
+@section Scripts
+{
+
+
+    <script>
+        function ChangeQty(input) {
+            let id = $(input).data("id");
+            let price = parseFloat($(input).data("price"));
+            let qty = parseInt($(input).val());
+
+            if (isNaN(qty) || qty <= 0) {
+                qty = 1;
+                $(input).val(1);
+            }
+
+         
+            $(".totalPrice").each(function () {
+                if ($(this).data("id") === id) {
+                    let total = (price * qty).toFixed(2);
+                    $(this).text(total);
+                }
+            });
+
+
+            let overallTotal = 0;
+            $(".totalPrice").each(function () {
+                let val = parseFloat($(this).text());
+                if (!isNaN(val)) {
+                    overallTotal += val;
+                }
+            });
+            $("#OverAllTotal").text(`$${overallTotal.toFixed(2)}`);
+
+
+            $.ajax({
+                url: '/Order/UpdateCartQuantity',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    itemId: id,
+                    qty: qty
+                }),
+                success: function () {
+                    console.log("Cart updated in cookie.");
+                },
+                error: function () {
+                    alert("Error updating cart.");
+                }
+            });
+        }
+
+
+    </script>
+
+
+}

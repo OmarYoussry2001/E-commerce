@@ -1,0 +1,32 @@
+﻿@using BL.DTO.Views
+@model VwItemDto
+<div class="img-wrapper">
+	<div class="front">
+	
+			<a href="/Item/ItemDetails?id=@Model.Id">
+			<img src="~/uploads/Images/@Model.ImagePathBackGround" class="img-fluid"
+				 alt="">
+		</a>
+	</div>
+	<div class="back">
+		<a href="product-page(no-sidebar).html">
+		
+			<img src="~/FrontEnd/MainTemp/assets/images/christmas/pro3/12.jpgw" class="img-fluid"
+				 alt="">
+		</a>
+	</div>
+
+</div>
+<div class="product-detail">
+	<div class="rating">
+		<i class="fa fa-star"></i>
+		<i class="fa fa-star"></i>
+		<i class="fa fa-star"></i>
+		<i class="fa fa-star"></i>
+		<i class="fa fa-star"></i>
+	</div>
+	<a href="product-page(no-sidebar).html">
+		<h6>@Model.Title</h6>
+	</a>
+	<h4>$@Model.Price</h4>
+</div>

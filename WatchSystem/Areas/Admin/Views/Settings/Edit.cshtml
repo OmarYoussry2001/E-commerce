@@ -1,0 +1,144 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model SettingsDto
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> @ActionsResources.Edit</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row" asp-controller="Settings" asp-action="Save" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="@Model.Id" />
+            <input type="hidden" asp-for="@Model.Logo" />
+
+            <div class="border p-3">
+              <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="WebsiteNameAr" class="form-control border-0 shadow" />
+                    <label asp-for="WebsiteNameAr" class="ms-2"></label>
+                    <span asp-validation-for="WebsiteNameAr" class="text-danger"></span>
+                </div>
+
+                    <div class="form-floating py-2 col-12">
+                    <input asp-for="WebsiteNameEn" class="form-control border-0 shadow" />
+                    <label asp-for="WebsiteNameEn" class="ms-2"></label>
+                    <span asp-validation-for="WebsiteNameEn" class="text-danger"></span>
+                </div>
+
+        
+
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="Address" class="form-control border-0 shadow" ></textarea>
+                    <label asp-for="Address" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="ContactNumber" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="ContactNumber" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="Fax" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="Fax" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="Fax" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="Email" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="Email" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="FacebookLink" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="FacebookLink" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="FacebookLink" class="text-danger"></span>
+                </div>
+                
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="InstagramLink" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="InstagramLink" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="InstagramLink" class="text-danger"></span>
+                </div>
+                
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="TwitterLink" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="TwitterLink" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="TwitterLink" class="text-danger"></span>
+                </div>
+                
+                <div class="form-floating py-2 col-12">
+                    <textarea asp-for="YoutubeLink" class="form-control border-0 shadow"></textarea>
+                    <label asp-for="YoutubeLink" class="ms-2 text-muted"></label>
+                    <span asp-validation-for="YoutubeLink" class="text-danger"></span>
+                </div>
+                
+             
+
+
+           
+                <div class="form-floating py-2 col-12">
+
+
+                    <div class="mb-3">
+                        <div class="col-md-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <span id="tbImgName" class="d-block mb-2 text-muted"></span>
+                                    <div id="tbImgSrc">
+                                        <img src="/Uploads/Images/@Model.Logo"
+                                             alt="Uploaded Image"
+                                             class="img-thumbnail"
+                                             style="width: 95%; height: 300px; border-radius: 10px; object-fit: cover; border: 1px solid #ddd; padding: 5px;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <label asp-for="Image"></label>
+                        <input type="file" asp-for="Image" class="form-control" onchange="Upload.UploadDefaultImg(event)" accept="image/png, image/jpeg, image/webp" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">@ActionsResources.Update</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Settings" asp-action="List" class="btn btn-outline-primary border  form-control">
+                             @ActionsResources.Back
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+
+   
+}

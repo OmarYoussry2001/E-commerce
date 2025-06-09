@@ -1,8 +1,394 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model VmHomePage
+<!-- Home slider -->
+<section class="p-0 snow-slider " style=" margin:auto; height:969px;  ">
+    <div class="slide-1 home-slider" >
+        @foreach(var item in Model.Sliders)
+        {
+            <div>
+                <img src="~/uploads/Images/@item.ImagePath" class="img-fluid" alt="">
+                <div class="slider-details">
+                    <div>
+                        <h3>@SystemResources.Bring</h3>
+                        <h2>@SystemResources.Christmas</h2>
+                        <h1>@SystemResources.Sale</h1>
+                        <h4>@SystemResources.UptoFiftyPercent</h4>
+                        <h4>@SystemResources.Off</h4>
+                        <a href="#" class="btn  text-white" tabindex="0">@SystemResources.ShopNow</a>
+                    </div>
+                </div>
+            </div>
+        }
+ 
+       
+    </div>
+</section>
+<!-- Home slider end -->
+<!-- collection banner -->
+<section class="pb-0 ratio_45">
+    <div class="container">
+        <div class="row partition2">
+            <div class="col-md-6">
+                <a href="#">
+                    <div class="collection-banner christmas-banner p-left text-left">
+                        <div class="img-part">
+                            <img src="~/FrontEnd/assets/images/christmas/sub-banner1.jpg"
+                                 class="img-fluid bg-img blur-up lazyload" alt="">
+                        </div>
+                        <div class="contain-banner">
+                            <div>
+                                <h4>@SystemResources.Christmas</h4>
+                                <h2>@SystemResources.GiftBox</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="#">
+                    <div class="collection-banner christmas-banner p-right text-right">
+                        <div class="img-part">
+                            <img src="~/FrontEnd/assets/images/christmas/sub-banner2.jpg"
+                                 class="img-fluid bg-img blur-up lazyload" alt="">
+                        </div>
+                        <div class="contain-banner">
+                            <div>
+                                <h4>@SystemResources.GoChristmas</h4>
+                                <h2>@SystemResources.Chocolate</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- collection banner end -->
+<!-- title-->
+<div class="title1  section-t-space">
+    <h4>@SystemResources.Specialproducts </h4>
+    <h2 class="title-inner1">@SystemResources.TopCollection</h2>
 </div>
+<!-- title end -->
+
+<!-- Product slider -->
+<section class="section-b-space p-t-0">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="product-5 product-christmas product-m no-arrow">
+
+                    @foreach (var item in Model.SpecialOffers)
+                    {
+                        <div class="product-box">
+                            <div class="product-box">
+                                <partial name="product-box" model="@item" />
+                            </div>
+                        </div>
+                    }
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product slider end -->
+
+<!-- Parallax banner -->
+<section class="p-0 overflow-cls" >
+    <div class="full-banner text-center p-center">
+        <img src="~/uploads/Images/2023_Alpina_Alpiner4_Automatic_AL-525NS4AQ6B_PR_SD..jpg" alt="" class="bg-img blur-up lazyload">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="banner-contain christmas-contain">
+                        <h3>@SystemResources.NewCollectionOfAwesomeGift</h3>
+                        <h2>@SystemResources.EndOfTheYear <span>@SystemResources.Sale</span></h2>
+                        <h4>@SystemResources.Get <span>50%</span> @SystemResources.ExtraOff</h4>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="santa-img">
+            <img src="~/FrontEnd/assets/images/christmas/santa.png" class="img-fluid" alt="">
+        </div>
+        <div class="decor">
+            <img src="~/FrontEnd/assets/images/christmas/parall.png" class="img-fluid" alt="">
+        </div>
+    </div>
+</section>
+<!-- Parallax banner end -->
+
+
+<!-- Tab product -->
+<div class="title1 section-t-space">
+    <h4>@SystemResources.ExclusiveProducts</h4>
+    <h2 class="title-inner1">@SystemResources.Specialproducts</h2>
+</div>
+<section class="section-b-space product-christmas p-t-0">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="theme-tab">
+                    <ul class="tabs tab-title">
+                        <li class="current">
+                            <a href="tab-4">@SystemResources.NewProducts</a>
+                        </li>
+                        <li class="">
+                            <a href="tab-5">@SystemResources.FeaturedProducts</a>
+                        </li>
+                        <li class="">
+                            <a href="tab-6">@SystemResources.BestSellers</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content-cls">
+                        <div id="tab-4" class="tab-content active default">
+                            <div class="product-5 product-m no-arrow">
+
+                                @foreach(var item in Model.NewItems)
+                                {
+                                    <div class="product-box">
+                                        <partial name="product-box" model="@item" />
+                                    </div>
+                                }
+                             
+                   
+                            </div>
+                        </div>
+                        <div id="tab-5" class="tab-content">
+                            <div class="product-5 product-m no-arrow">
+
+
+                                @foreach (var item in Model.FeaturedProducts)
+                                {
+                                    <div class="product-box">
+                                        <partial name="product-box" model="@item" />
+                                    </div>
+                                }
+                         
+                            </div>
+                        </div>
+                        <div id="tab-6" class="tab-content">
+                            <div class="product-5 product-m no-arrow">
+                                @foreach (var item in Model.BestSellers)
+                                {
+                                    <div class="product-box">
+                                        <partial name="product-box" model="@item" />
+                                    </div>
+                                }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tab product end -->
+
+
+<!-- section start -->
+<section class="pt-5 overflow-cls mt-4 ">
+    <div class="full-banner feature-banner">
+        <img src="~/uploads/Imagess/2023_Alpina_Alpiner4_Automatic_AL-525N4AQ6_PR_SD.jpg" alt="" class="bg-img blur-up lazyload">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="feature-text">
+                        <h2>@SystemResources.SendGiftYourLovedOne</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <ul class="feature-object">
+                        <li>
+                            <div class="media">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="~/FrontEnd/assets/images/chrisstmas/f-p/1.png"
+                                     alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="~/FrontEnd/assets/imageggs/christmas/f-p/2.png"
+                                     alt="">
+                            </div>
+
+                        </li>
+                        <li>
+                            <div class="media">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="~/FrontEnd/assets/imagses/christmas/f-p/3.png"
+                                     alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-6 offset-lg-4">
+                    <ul class="feature-object-right">
+                        <li>
+                            <div class="media">
+                                <img class="img-fluid" src="~/FrontEnd/assets/images/schristmas/f-p/4.png"
+                                     alt="">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <img class="img-fluid" src="~/FrontEnd/assets/imssages/christmas/f-p/5.png"
+                                     alt="">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p>F</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <img class="img-fluid" src="~/FrontEnd/assets/images/ssschristmas/f-p/6.png"
+                                     alt="">
+                                <div class="media-body">
+                                    <div>
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="center-img">
+            <img src="~/FrontEnd/assets/images/christmas/bg1.png" alt="" class="img-fluid">
+        </div>
+        <div class="banner-decor">
+            <div class="left-img">
+                <img src="~/FrontEnd/assets/images/christmas/decor.png" class="img-fluid" alt="">
+            </div>
+            <div class="right-img">
+                <img src="~/FrontEnd/assets/images/christmas/decor.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section end -->
+<!-- Tab product -->
+<div class="title1 section-t-space  margin-add">
+    <h2 class="title-inner1">@SystemResources.TopCategory</h2>
+</div>
+<section class="section-b-space p-t-0 product-christmas">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="theme-tab">
+                  
+                    <div class="tab-content-cls">
+                        <div id="tab-7" class="tab-content active default">
+                            <div class="product-5 product-m no-arrow">
+                                @foreach(var item in Model.NewItems)
+                                {
+                                    <div class="product-box">
+                                        <partial name="product-box" model="@item" />
+
+                                    </div>
+                                }
+                              
+                       
+                            </div>
+                        </div>
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tab product end -->
+
+
+<!-- blog start -->
+<section class="blog-section grey-bg section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="title2 text-left">
+                    <h2 class="title-inner1">@SystemResources.FromTheBlog</h2>
+                </div> 
+
+                <div class="slide-3 no-arrow">
+                    @foreach(var item in Model.AllItems)
+                    {
+                        <div>
+                            <div class="blog-wrap">
+                                <a href="/Item/ItemDetails?id=@item.Id">
+                                    <div class="blog-image">
+                                        <img src="~/uploads/Images/@item.ImagePathBackGround" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="blog-details text-left p-0">
+
+                                        <h4>@DateTime.Now</h4>
+                                    
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    }
+                
+                  
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="review-box ml-5 mt-5">
+                    <div class="slide-1">
+                        <div>
+                            <div class="review-content">
+                                <div class="avtar">
+                                    <img src="~/uploads/Images/WhatsApp Image 2024-12-31 at 01.30.36_05d9bc72.jpg" alt="">
+                                </div>
+                                <h5>@SystemResources.OmarYousry</h5>
+                                <h6>@SystemResources.DotNetDeveloper</h6>
+                                <p>
+                                    @SystemResources.IAmaPassionateJuniorDotNetDeveloperWithHandsOnExperienceInBuildingWebApplicationsUsingAspNetMvcAndEntityFramework .
+                                </p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="santa-img">
+                        <img src="~/FrontEnd/assets/images/christmas/testimonial/santa.png"  alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog end --> 

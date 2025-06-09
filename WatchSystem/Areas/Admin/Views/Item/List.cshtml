@@ -1,0 +1,79 @@
+﻿
+@{
+	Layout = "_AdminLayout";
+}
+@model List<VwItemWithTypeNameDto >
+
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">@SystemResources.ItemList</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="row pb-3">
+			<div class="col-6">
+			</div>
+			<div class="col-6 text-end">
+				<a asp-controller="Item" asp-action="Edit" asp-area="Admin" class="btn btn-primary">
+					<i class="bi bi-plus-circle"></i>  @ActionsResources.Create
+				</a>
+			</div>
+		</div>
+
+		<table class="table table-bordered table-striped" id="myTable">
+			<thead>
+				<tr>
+					<th> @FormResources.Name </th>
+					<th> @FormResources.Image </th>
+					<th> @SystemResources.SerialNo </th>
+					<th> @FormResources.Price </th>
+					<th> @SystemResources.SoldCount </th>
+					<th> @SystemResources.DiscountPercent </th>
+					<th> @SystemResources.TypeName </th>
+
+					<th>ِ@ActionsResources.Action</th>
+				
+
+				</tr>
+			</thead>
+			
+		</table>
+
+	</div>
+</div>
+@section Scripts {
+
+
+	<script>
+	    function Delete(url) {
+			Swal.fire({
+				title: '@NotifiAndAlertsResources.AreYouSure',
+				text: "YouWontBeAbleToRevertThis",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: '@ActionsResources.ok',
+				cancelButtonText: '@ActionsResources.Cancel'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					window.location.href = url;
+				}
+			})
+		}
+	</script>
+
+	
+	<script src="https://cdn.datatables.net/2.3.1/js/dataTables.min.js"></script>
+
+	<script src="~/customs/ItemDataTable.js"></script>
+
+	
+
+
+}
+
+

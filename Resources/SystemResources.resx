@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminTitle" xml:space="preserve">
+    <value>لوحة التحكم الذكية</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>الخصائص</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>فئات</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>فئة</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>الوحدات</value>
+  </data>
+  <data name="IsFinal" xml:space="preserve">
+    <value>نهائي</value>
+  </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>وصف قصير</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>وصف</value>
+  </data>
+  <data name="ThumbnailImage" xml:space="preserve">
+    <value>صور مصغره</value>
+  </data>
+  <data name="StockStatus" xml:space="preserve">
+    <value>حاله المخزون</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>كميه</value>
+  </data>
+  <data name="VisibilityScope" xml:space="preserve">
+    <value>نطاق الرؤية</value>
+  </data>
+  <data name="FieldType" xml:space="preserve">
+    <value>نوع الحقل</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>الطول الأقصى</value>
+  </data>
+  <data name="AddAttribute" xml:space="preserve">
+    <value>أضف سمة</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>نص</value>
+  </data>
+  <data name="IntegerNumber" xml:space="preserve">
+    <value>رقم صحيح</value>
+  </data>
+  <data name="DecimalNumber" xml:space="preserve">
+    <value>رقم عشري</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>قائمة</value>
+  </data>
+  <data name="CheckBox" xml:space="preserve">
+    <value>خانة اختيار</value>
+  </data>
+  <data name="MultiSelectList" xml:space="preserve">
+    <value>قائمة اختيار متعددة</value>
+  </data>
+  <data name="ParentId" xml:space="preserve">
+    <value>معرف الوالد</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>اسم الفئه</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>عمليات</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>منتجات</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>بلد</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>مدينه</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>محافظه</value>
+  </data>
+  <data name="Attribute" xml:space="preserve">
+    <value>الخاصية</value>
+  </data>
+  <data name="AffectsPricing" xml:space="preserve">
+    <value>يؤثر على السعر</value>
+  </data>
+  <data name="IsRequired" xml:space="preserve">
+    <value>مطلوب</value>
+  </data>
+  <data name="NoAttributes" xml:space="preserve">
+    <value>لا توجد خصائص متاحة</value>
+  </data>
+  <data name="IsAffectPrice" xml:space="preserve">
+    <value>يؤثر على السعر</value>
+  </data>
+  <data name="CategoryAttributes" xml:space="preserve">
+    <value>خصائص الفئة</value>
+  </data>
+  <data name="ListOfCategory" xml:space="preserve">
+    <value>قائمه الفئات</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>ترتيب العرض</value>
+  </data>
+  <data name="ListOfProdct" xml:space="preserve">
+    <value>قائمه المنتجات</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>المؤلف</value>
+  </data>
+  <data name="ListPrice" xml:space="preserve">
+    <value>السعر الاصلي</value>
+  </data>
+  <data name="AsLowAs" xml:space="preserve">
+    <value>ابتداء من </value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>لا تملك صلاحية الوصول</value>
+  </data>
+  <data name="YouDontHavePermissionToAccessThisPagePleaseContactTheAdministratorIfYouBelieveThisIsAnError" xml:space="preserve">
+    <value>ليس لديك صلاحية الوصول إلى هذه الصفحة. إذا كنت تعتقد أن هذا حدث عن طريق الخطأ، يرجى التواصل مع المسؤول</value>
+  </data>
+  <data name="GoToHomePage" xml:space="preserve">
+    <value>الانتقال إلى الصفحة الرئيسية</value>
+  </data>
+  <data name="ContactSupport" xml:space="preserve">
+    <value>اتصل بالدعم</value>
+  </data>
+  <data name="ErrorCode403Forbidden" xml:space="preserve">
+    <value>خطأ: 403 - ممنوع الدخول</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>حساب جديد</value>
+  </data>
+  <data name="SignUpForFreeAccountAtOurStoreRegistrationIsQuickAndEasyItAllowsYouToOrderFromOurShopToStartShoppingClickRegister" xml:space="preserve">
+    <value>قم بالتسجيل للحصول على حساب مجاني في متجرنا. التسجيل سريع وسهل، ويسمح لك بالطلب من متجرنا. للبدء بالتسوق، اضغط على تسجيل</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>الدور</value>
+  </data>
+  <data name="SelectRole" xml:space="preserve">
+    <value>اختر الدور</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="cart" xml:space="preserve">
+    <value>عربة التسوق</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>السعر الإجمالي</value>
+  </data>
+  <data name="InvoiceIsSuccessfullyProcessedAndYourOrderIsOnTheWay" xml:space="preserve">
+    <value>تمت معالجة الفاتورة بنجاح، وطلبك في الطريق</value>
+  </data>
+  <data name="YourOrderDetails" xml:space="preserve">
+    <value>تفاصيل طلبك</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>منتج</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>بواسطة</value>
+  </data>
+  <data name="AddToCart" xml:space="preserve">
+    <value>أضف إلى عربة التسوق</value>
+  </data>
+  <data name="ShareIt" xml:space="preserve">
+    <value>شاركها</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>الرقم التسلسلي</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>الجودة</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>المقاس</value>
+  </data>
+  <data name="RelatedProducts" xml:space="preserve">
+    <value>منتجات ذات صلة</value>
+  </data>
+  <data name="QualityAssurance" xml:space="preserve">
+    <value>ضمان الجودة</value>
+  </data>
+  <data name="OneHundredPercentQualityGuaranteedProducts" xml:space="preserve">
+    <value>منتجات مضمونة بجودة 100%</value>
+  </data>
+  <data name="WeAreDedicatedToProvidingExceptionalServicesAndProductsToOurCustomers" xml:space="preserve">
+    <value>نحن ملتزمون بتقديم خدمات ومنتجات متميزة لعملائنا</value>
+  </data>
+  <data name="OurTeamOfProfessionalsWorksTirelesslyToEnsureCustomerSatisfactionThroughInnovativeSolutionsAndQualityCraftsmanship" xml:space="preserve">
+    <value>يعمل فريقنا من المحترفين بلا كلل لضمان رضا العملاء من خلال حلول مبتكرة وجودة في التنفيذ</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>الصفحة غير موجودة</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>مجموعة</value>
+  </data>
+  <data name="Fashion" xml:space="preserve">
+    <value>موضة</value>
+  </data>
+  <data name="DiscoverTimelessEleganceWithOurPremiumWatches" xml:space="preserve">
+    <value>اكتشف الأناقة الخالدة مع ساعاتنا الفاخرة</value>
+  </data>
+  <data name="AtVelvoraWatchesWeBelieveAGreatWatchIsMoreThanJustATimepieceItsAStatementOfStyleAndSophistication" xml:space="preserve">
+    <value>في Velvora Watches، نؤمن بأن الساعة الرائعة ليست مجرد أداة لقياس الوقت، بل هي تعبير عن الأناقة والرقي.</value>
+  </data>
+  <data name="Bring" xml:space="preserve">
+    <value>جلب</value>
+  </data>
+  <data name="Christmas" xml:space="preserve">
+    <value>عيد الميلاد</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>تخفيضات</value>
+  </data>
+  <data name="UptoFiftyPercent" xml:space="preserve">
+    <value>خصم حتى 50%</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>خصم</value>
+  </data>
+  <data name="ShopNow" xml:space="preserve">
+    <value>تسوّق الآن</value>
+  </data>
+  <data name="GiftBox" xml:space="preserve">
+    <value>صندوق الهدايا</value>
+  </data>
+  <data name="GoChristmas" xml:space="preserve">
+    <value>اذهب إلى عيد الميلاد</value>
+  </data>
+  <data name="Chocolate" xml:space="preserve">
+    <value>شوكولاتة</value>
+  </data>
+  <data name="Specialproducts" xml:space="preserve">
+    <value>منتجات مميزة</value>
+  </data>
+  <data name="TopCollection" xml:space="preserve">
+    <value>أعلى مجموعة</value>
+  </data>
+  <data name="OmarYousry" xml:space="preserve">
+    <value>عمر يسري</value>
+  </data>
+  <data name="SendGiftYourLovedOne" xml:space="preserve">
+    <value>أرسل هدية لمن تحب</value>
+  </data>
+  <data name="TopCategory" xml:space="preserve">
+    <value>أفضل الفئات</value>
+  </data>
+  <data name="FromTheBlog" xml:space="preserve">
+    <value>من المدوّنة</value>
+  </data>
+  <data name="DotNetDeveloper" xml:space="preserve">
+    <value>مطوّر .NET</value>
+  </data>
+  <data name="IAmaPassionateJuniorDotNetDeveloperWithHandsOnExperienceInBuildingWebApplicationsUsingAspNetMvcAndEntityFramework" xml:space="preserve">
+    <value>مطور .NET شغوف بالتعلم، أتمتع بخبرة قوية في تطوير تطبيقات الويب باستخدام MVC و Web API، وأتقن التعامل مع Entity Framework و LINQ. أحب بناء حلول نظيفة ومنظمة باستخدام الطبقات (N-Layer Architecture)</value>
+  </data>
+  <data name="BestSellers" xml:space="preserve">
+    <value>الأكثر مبيعًا</value>
+  </data>
+  <data name="FeaturedProducts" xml:space="preserve">
+    <value>منتجات مميزة</value>
+  </data>
+  <data name="NewProducts" xml:space="preserve">
+    <value>منتجات جديدة</value>
+  </data>
+  <data name="ExclusiveProducts" xml:space="preserve">
+    <value>منتج حصري</value>
+  </data>
+  <data name="NewCollectionOfAwesomeGift" xml:space="preserve">
+    <value>مجموعة جديدة من الهدايا الرائعة</value>
+  </data>
+  <data name="EndOfTheYear" xml:space="preserve">
+    <value>هاية العام</value>
+  </data>
+  <data name="Get" xml:space="preserve">
+    <value>احصل على</value>
+  </data>
+  <data name="ExtraOff" xml:space="preserve">
+    <value>خصم اضافي</value>
+  </data>
+  <data name="WatchSystem" xml:space="preserve">
+    <value>متجر الساعات</value>
+  </data>
+  <data name="ContentManagement" xml:space="preserve">
+    <value>إدارة المحتوى</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>شريط التمرير</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>حسابي</value>
+  </data>
+  <data name="WelcomeToOurStoreWatch" xml:space="preserve">
+    <value>مرحبًا بك في متجرنا للساعات</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="GoToAdminPanel" xml:space="preserve">
+    <value>اذهب إلى لوحة الإدارة</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="SettingsList" xml:space="preserve">
+    <value>قائمة الإعدادات</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>شعار</value>
+  </data>
+  <data name="FacebookLink" xml:space="preserve">
+    <value>رابط فيسبوك</value>
+  </data>
+  <data name="InstagramLink" xml:space="preserve">
+    <value>رابط الانستجرام</value>
+  </data>
+  <data name="TwitterLink" xml:space="preserve">
+    <value>رابط تويتر</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>رقم التواصل</value>
+  </data>
+  <data name="MiddlePanner" xml:space="preserve">
+    <value>البانر الأوسط</value>
+  </data>
+  <data name="LastPanner" xml:space="preserve">
+    <value>البانر الأخير</value>
+  </data>
+  <data name="YoutubeLink" xml:space="preserve">
+    <value>رابط يوتيوب</value>
+  </data>
+  <data name="TypeList" xml:space="preserve">
+    <value>قائمة الأنواع</value>
+  </data>
+  <data name="ItemList" xml:space="preserve">
+    <value>قائمه المنتجات</value>
+  </data>
+  <data name="SoldCount" xml:space="preserve">
+    <value>عدد المبيعات</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>اسم  النوع</value>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>نسبة الخصم</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>فاكس</value>
+  </data>
+  <data name="StoreInformation" xml:space="preserve">
+    <value>معلومات المتجر</value>
+  </data>
+  <data name="WatchesAreTimekeepingDevicesWornOnTheWristOrCarriedInAPocket" xml:space="preserve">
+    <value>الساعات هي أدوات لقياس الوقت تُرتدى على المعصم أو تُحمل في الجيب. تجمع بين الوظيفة العملية والمظهر الجمالي. إليك وصفًا تفصيليًا للساعات</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="ShowingProductsResult" xml:space="preserve">
+    <value>عرض نتائج المنتجات</value>
+  </data>
+</root>

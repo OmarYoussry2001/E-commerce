@@ -1,0 +1,373 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+@model ItemDto
+
+
+<form asp-action="Save" asp-controller="Item" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <input type="hidden" asp-for="@Model.Id" />
+    <input type="hidden" asp-for="@Model.Description.Id" />
+    <input type="hidden" asp-for="@Model.ImagePathBackGround" />
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Item Management</h5>
+        </div>
+
+        <div class="card-body">
+            <ul class="nav nav-tabs nav-justified mb-4" id="wizardTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="step1-tab" data-bs-toggle="tab" href="#step1">
+                        <i class="fas fa-info-circle me-2"></i>Basic Info
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="step2-tab" data-bs-toggle="tab" href="#step2">
+                        <i class="fas fa-images me-2"></i>Images
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="step3-tab" data-bs-toggle="tab" href="#step3">
+                        <i class="fas fa-align-left me-2"></i>Description
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content p-3 border border-top-0 rounded-bottom">
+                <!-- Step 1: Basic Info -->
+                <div class="tab-pane fade show active" id="step1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="TitleAr" class="form-label fw-bold"></label>
+                            <input asp-for="TitleAr" class="form-control" placeholder="Enter title in Arabic" />
+                            <span asp-validation-for="TitleAr" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="TitleEn" class="form-label fw-bold"></label>
+                            <input asp-for="TitleEn" class="form-control" placeholder="Enter title in English" />
+                            <span asp-validation-for="TitleEn" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="SerialNo" class="form-label fw-bold"></label>
+                            <input asp-for="SerialNo" class="form-control" placeholder="Enter serial number" />
+                            <span asp-validation-for="SerialNo" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="TypeId" class="form-label fw-bold"></label>
+                            <select asp-for="TypeId" asp-items="@(new SelectList(Model.Types, "Id", "Title"))"
+                                    class="form-select">
+                                <option disabled selected>-- Select Category --</option>
+                            </select>
+                            <span asp-validation-for="TypeId" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Price" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input asp-for="Price" class="form-control" placeholder="0.00" />
+                            </div>
+                            <span asp-validation-for="Price" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DiscountPercent" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="DiscountPercent" class="form-control" placeholder="0" />
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <span asp-validation-for="DiscountPercent" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ImageBackGround" class="form-label fw-bold">Main Image</label>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div id="tbImgSrc">
+                                    <img src="/Uploads/Images/@Model.ImagePathBackGround"
+                                         alt="Main product image"
+                                         class="img-fluid rounded"
+                                         style="max-height: 300px; object-fit: contain;" />
+                                </div>
+                                <div class="mt-3">
+                                    <input type="file" asp-for="ImageBackGround"
+                                           class="form-control mt-2"
+                                           onchange="Upload.UploadDefaultImg(event)"
+                                           accept="image/png, image/jpeg, image/webp" />
+                                    <span asp-validation-for="ImageBackGround" class="text-danger small"></span>
+                                    <div class="form-text">Recommended size: 800x800px, Max 2MB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary next-step" data-next="step2-tab">
+                            Next <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Image Upload -->
+                <div class="tab-pane fade" id="step2">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Upload additional images to showcase your product from different angles.
+                    </div>
+
+                    <div id="imagesRepeater">
+                        <div id="imagesContainer" class="row">
+                            @if (Model.Images != null && Model.Images.Any())
+                            {
+                                for (int i = 0; i < Model.Images.Count; i++)
+                                {
+                                    <div class="col-md-4 mb-4 image-wrapper" data-index="@i" data-id="@Model.Images[i].Id">
+                                        <div class="card h-100">
+                                            <div class="card-body text-center">
+                                                <img src="/Uploads/Images/@Model.Images[i].ImagePath"
+                                                     class="img-thumbnail mb-3"
+                                                     style="width: 100%; height: 200px; object-fit: cover;" />
+                                                <input type="hidden" name="Images[@i].Id" value="@Model.Images[i].Id" />
+                                                <input type="hidden" name="Images[@i].ImagePath" value="@Model.Images[i].ImagePath" />
+                                                <input type="file" name="Images[@i].Image"
+                                                       class="form-control form-control-sm"
+                                                       accept="image/png, image/jpeg, image/webp" />
+                                            </div>
+                                            <div class="card-footer bg-transparent">
+                                                <button type="button" class="btn btn-sm btn-danger w-100 removeImageBtn">
+                                                    <i class="fas fa-trash me-1"></i> Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button type="button" id="addImageBtn" class="btn btn-outline-primary">
+                                <i class="fas fa-plus me-2"></i>Add Another Image
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn btn-secondary prev-step" data-prev="step1-tab">
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <button type="button" class="btn btn-primary next-step" data-next="step3-tab">
+                            Next <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Description -->
+                <div class="tab-pane fade" id="step3">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.Size" class="form-label fw-bold"></label>
+                            <input asp-for="Description.Size" class="form-control" placeholder="e.g. Large, 10x20cm" />
+                            <span asp-validation-for="Description.Size" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.Quantity" class="form-label fw-bold"></label>
+                            <input asp-for="Description.Quantity" class="form-control" placeholder="Available quantity" />
+                            <span asp-validation-for="Description.Quantity" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.ColorAr" class="form-label fw-bold"></label>
+                            <input asp-for="Description.ColorAr" class="form-control" placeholder="Color in Arabic" />
+                            <span asp-validation-for="Description.ColorAr" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.ColorEn" class="form-label fw-bold"></label>
+                            <input asp-for="Description.ColorEn" class="form-control" placeholder="Color in English" />
+                            <span asp-validation-for="Description.ColorEn" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.QualityAr" class="form-label fw-bold"></label>
+                            <input asp-for="Description.QualityAr" class="form-control" placeholder="Quality in Arabic" />
+                            <span asp-validation-for="Description.QualityAr" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Description.QualityEn" class="form-label fw-bold"></label>
+                            <input asp-for="Description.QualityEn" class="form-control" placeholder="Quality in English" />
+                            <span asp-validation-for="Description.QualityEn" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description.BenefitDescriptionAr" class="form-label fw-bold"></label>
+                        <textarea asp-for="Description.BenefitDescriptionAr" class="form-control" rows="5"
+                                  placeholder="Detailed description in Arabic"></textarea>
+                        <span asp-validation-for="Description.BenefitDescriptionAr" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description.BenefitDescriptionEn" class="form-label fw-bold"></label>
+                        <textarea asp-for="Description.BenefitDescriptionEn" class="form-control" rows="5"
+                                  placeholder="Detailed description in English"></textarea>
+                        <span asp-validation-for="Description.BenefitDescriptionEn" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn btn-secondary prev-step" data-prev="step2-tab">
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save me-2"></i>@ActionsResources.Create
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-end mt-3">
+        <a asp-controller="Item" asp-action="List" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Back to List
+        </a>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script src="~/customs/uploadimage.js"></script>
+    <script src="https://cdn.tiny.cloud/1/bv9h32c8zecbn3i7r8mxsjp3wch88885vqpzzg060mit32qq/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+    </script>
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"></script> *@
+
+    @* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
+    @* <script src="https://cdn.jsdelivr.net/npm/jquery-repeater/jquery.repeater.min.js"></script> *@
+    <script>
+           document.addEventListener("DOMContentLoaded", function () {
+            const imagesContainer = document.getElementById("imagesContainer");
+            const addImageBtn = document.getElementById("addImageBtn");
+            let imageIndex = imagesContainer.querySelectorAll(".image-wrapper").length;
+
+            function reindexImages() {
+                const wrappers = imagesContainer.querySelectorAll(".image-wrapper");
+                wrappers.forEach((wrapper, i) => {
+                    wrapper.dataset.index = i;
+                 
+                    const fileInput = wrapper.querySelector('input[type="file"]');
+                    const idInput = wrapper.querySelector('input[type="hidden"][name$=".Id"]');
+                    const pathInput = wrapper.querySelector('input[type="hidden"][name$=".ImagePath"]');
+
+                    if (fileInput) fileInput.name = `Images[${i}].Image`;
+                    if (idInput) idInput.name = `Images[${i}].Id`;
+                    if (pathInput) pathInput.name = `Images[${i}].ImagePath`;
+                });
+            }
+
+            function createImageInput(index) {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("mb-3", "image-wrapper");
+                wrapper.dataset.index = index;
+
+                const previewDiv = document.createElement("div");
+                previewDiv.style.marginBottom = "8px";
+
+                const input = document.createElement("input");
+                input.type = "file";
+                input.name = `Images[${index}].Image`;
+                input.className = "form-control";
+                input.accept = "image/png, image/jpeg, image/webp";
+
+                input.addEventListener("change", function (e) {
+                    previewDiv.innerHTML = "";
+                    const files = e.target.files;
+                    if (files.length > 0) {
+                        Array.from(files).forEach(file => {
+                            const reader = new FileReader();
+                            reader.onload = function (event) {
+                                const imgElement = document.createElement("img");
+                                imgElement.className = "img-thumbnail";
+                                imgElement.src = event.target.result;
+                                imgElement.style.cssText = "width: 120px; height: 120px; border-radius: 10px; object-fit: cover; border: 1px solid #ddd; padding: 5px;";
+                                previewDiv.appendChild(imgElement);
+                            };
+                            reader.readAsDataURL(file);
+                        });
+                    }
+                });
+
+                const removeBtn = document.createElement("button");
+                removeBtn.type = "button";
+                removeBtn.className = "btn btn-danger mt-2 removeImageBtn";
+                removeBtn.textContent = "Remove";
+
+                removeBtn.onclick = () => {
+                    wrapper.remove();
+                    reindexImages();
+                };
+
+                wrapper.appendChild(previewDiv);
+                wrapper.appendChild(input);
+                wrapper.appendChild(removeBtn);
+
+                return wrapper;
+            }
+
+            addImageBtn.addEventListener("click", () => {
+                const newInput = createImageInput(imageIndex++);
+                imagesContainer.appendChild(newInput);
+            });
+
+            imagesContainer.addEventListener("click", function(e){
+                if(e.target.classList.contains("removeImageBtn")){
+                    const wrapper = e.target.closest(".image-wrapper");
+                    if(wrapper){
+                        wrapper.remove();
+                        reindexImages();
+                        imageIndex = imagesContainer.querySelectorAll(".image-wrapper").length;
+                    }
+                }
+            });
+        });
+
+    </script>
+    <script>
+                document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', function () {
+                document.getElementById(this.dataset.next).click();
+            });
+        });
+
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', function () {
+                document.getElementById(this.dataset.prev).click();
+            });
+        });
+
+
+
+    </script>
+
+
+
+
+}

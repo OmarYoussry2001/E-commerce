@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model TypeDto
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> @ActionsResources.Create</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row" asp-action="Save" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="@Model.Id" />
+            <input type="hidden" asp-for="@Model.ImagePath" />
+
+            <div class="border p-3">
+        
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="TitleAr" class="form-control border-0 shadow" />
+                    <label asp-for="TitleAr" class="ms-2"></label>
+                    <span asp-validation-for="TitleAr" class="text-danger"></span>
+                </div>
+
+                    <div class="form-floating py-2 col-12">
+                    <input asp-for="TitleEn" class="form-control border-0 shadow" />
+                    <label asp-for="TitleEn" class="ms-2"></label>
+                    <span asp-validation-for="TitleEn" class="text-danger"></span>
+                </div>
+
+
+          
+                <div class="form-floating py-2 col-12">
+
+
+                    <div class="mb-3">
+                        <div class="col-md-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <span id="tbImgName" class="d-block mb-2 text-muted"></span>
+                                    <div id="tbImgSrc">
+                                        <img src="/Uploads/Images/@Model.ImagePath"
+                                             alt="Uploaded Image"
+                                             class="img-thumbnail"
+                                             style="width: 95%; height: 300px; border-radius: 10px; object-fit: cover; border: 1px solid #ddd; padding: 5px;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <label asp-for="Image"></label>
+                        <input type="file" asp-for="Image" class="form-control" onchange="Upload.UploadDefaultImg(event)" accept="image/png, image/jpeg, image/webp" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">@ActionsResources.Create</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Type" asp-action="List" class="btn btn-outline-primary border  form-control">
+                             @ActionsResources.Back
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+	<script src="~/customs/uploadimage.js"></script>
+  
+   
+}

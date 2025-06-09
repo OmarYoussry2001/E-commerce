@@ -1,0 +1,31 @@
+﻿
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-8 col-lg-6 text-center">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <div class="text-danger mb-4">
+                        <i class="bi bi-shield-lock" style="font-size: 5rem;"></i>
+                    </div>
+                    <h1 class="display-4 fw-bold text-danger mb-3">@SystemResources.AccessDenied</h1>
+                    <p class="lead text-muted mb-4">
+                        @SystemResources.YouDontHavePermissionToAccessThisPagePleaseContactTheAdministratorIfYouBelieveThisIsAnError
+                    </p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a href="/Home/Index" class="btn btn-primary btn-lg px-4 gap-3">
+                            <i class="bi bi-house-door"></i> @SystemResources.GoToHomePage
+                        </a>
+                        <a href="mailto:admin@example.com" class="btn btn-outline-secondary btn-lg px-4">
+                            <i class="bi bi-envelope"></i> @SystemResources.ContactSupport
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <p class="text-muted mb-0">
+                        <i class="bi bi-info-circle"></i> @SystemResources.ErrorCode403Forbidden
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

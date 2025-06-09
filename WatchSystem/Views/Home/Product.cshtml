@@ -1,0 +1,98 @@
+﻿
+
+@model VmHomePage
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="page-title">
+                        <h2>@SystemResources.Collection</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">@SystemResources.Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@SystemResources.Collection</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+
+
+    <!-- section start -->
+    <section class="section-b-space ratio_asos">
+        <div class="collection-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="collection-content col">
+                        <div class="page-main-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="top-banner-wrapper ml-5" >
+                                    <a href="#"><img src="~/uploads/Images/2024-FEB-PRODUCT-RANGE-1-1024x499.jpg" class="img-fluid blur-up lazyload" alt=""></a>
+                                        <div class="top-banner-content small-section">
+                                        <h4>@SystemResources.Fashion</h4>
+                                        <h5>
+                                            @SystemResources.DiscoverTimelessEleganceWithOurPremiumWatches
+                                            </h5>
+                                        <p>@SystemResources.AtVelvoraWatchesWeBelieveAGreatWatchIsMoreThanJustATimepieceItsAStatementOfStyleAndSophistication</p>
+                                        </div>
+                                    </div>
+                                    <div class="collection-product-wrapper">
+                                        <div class="product-top-filter">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="product-filter-content">
+                                                        <div class="search-count">
+                                                        <h5>@SystemResources.ShowingProductsResult:@DateTime.Now</h5>
+                                                        </div>
+                                                        <div class="collection-view">
+                                                            <ul>
+                                                                <li><i class="fa fa-th grid-layout-view"></i></li>
+                                                                <li><i class="fa fa-list-ul list-layout-view"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="collection-grid-view">
+                                                            <ul>
+                                                                <li><img src="../assets/images/icon/2.png" alt="" class="product-2-layout-view"></li>
+                                                                <li><img src="../assets/images/icon/3.png" alt="" class="product-3-layout-view"></li>
+                                                                <li><img src="../assets/images/icon/4.png" alt="" class="product-4-layout-view"></li>
+                                                                <li><img src="../assets/images/icon/6.png" alt="" class="product-6-layout-view"></li>
+                                                            </ul>
+                                                        </div>
+                                                 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-wrapper-grid">
+                                            <div class="row margin-res">
+                                            @foreach (var item in Model.AllItems)
+                                                {
+                                                <div class="col-lg-2 col-6 col-grid-box">
+
+                                                    <partial name="product-box" model="@item" />
+                                                </div>
+                                                }
+                                            
+                                       
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section End -->
+
+

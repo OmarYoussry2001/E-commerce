@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminTitle" xml:space="preserve">
+    <value>Smart Panel</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="IsFinal" xml:space="preserve">
+    <value>IsFinal</value>
+  </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>ShortDescription</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ThumbnailImage" xml:space="preserve">
+    <value>ThumbnailImage</value>
+  </data>
+  <data name="StockStatus" xml:space="preserve">
+    <value>StockStatus</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="VisibilityScope" xml:space="preserve">
+    <value>VisibilityScope</value>
+  </data>
+  <data name="FieldType" xml:space="preserve">
+    <value>Field Type</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>MaxLength</value>
+  </data>
+  <data name="AddAttribute" xml:space="preserve">
+    <value>Add Attribute</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="IntegerNumber" xml:space="preserve">
+    <value>Integer Number</value>
+  </data>
+  <data name="DecimalNumber" xml:space="preserve">
+    <value>Decimal Number</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="CheckBox" xml:space="preserve">
+    <value>CheckBox</value>
+  </data>
+  <data name="MultiSelectList" xml:space="preserve">
+    <value>Multi Select List</value>
+  </data>
+  <data name="ParentId" xml:space="preserve">
+    <value>ParentId</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category Nme</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="AffectsPricing" xml:space="preserve">
+    <value>Affects Pricing</value>
+  </data>
+  <data name="IsRequired" xml:space="preserve">
+    <value>Is Required</value>
+  </data>
+  <data name="NoAttributes" xml:space="preserve">
+    <value>No attributes available</value>
+  </data>
+  <data name="IsAffectPrice" xml:space="preserve">
+    <value>Affects Price</value>
+  </data>
+  <data name="CategoryAttributes" xml:space="preserve">
+    <value>Category Attributes</value>
+  </data>
+  <data name="ListOfCategory" xml:space="preserve">
+    <value>List Of Category</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="ListOfProdct" xml:space="preserve">
+    <value>List Of Prodct</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="ListPrice" xml:space="preserve">
+    <value>The List Price</value>
+  </data>
+  <data name="AsLowAs" xml:space="preserve">
+    <value> As low as</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="YouDontHavePermissionToAccessThisPagePleaseContactTheAdministratorIfYouBelieveThisIsAnError" xml:space="preserve">
+    <value>You don't have permission to access this page. Please contact the administrator if you believe this is an error</value>
+  </data>
+  <data name="GoToHomePage" xml:space="preserve">
+    <value>GoToHomePage</value>
+  </data>
+  <data name="ContactSupport" xml:space="preserve">
+    <value>Contact Support</value>
+  </data>
+  <data name="ErrorCode403Forbidden" xml:space="preserve">
+    <value>Error code: 403 Forbidden</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>New Account</value>
+  </data>
+  <data name="SignUpForFreeAccountAtOurStoreRegistrationIsQuickAndEasyItAllowsYouToOrderFromOurShopToStartShoppingClickRegister" xml:space="preserve">
+    <value>Sign up for a free account at our store. Registration is quick and easy. It allows you to be
+able to order from our shop. To start shopping click register</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="SelectRole" xml:space="preserve">
+    <value>Select Role</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Password Confirmation</value>
+  </data>
+  <data name="cart" xml:space="preserve">
+    <value>cart</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>total</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="InvoiceIsSuccessfullyProcessedAndYourOrderIsOnTheWay" xml:space="preserve">
+    <value>Invoice is successfully processed, and your order is on the way</value>
+  </data>
+  <data name="YourOrderDetails" xml:space="preserve">
+    <value>Your Order Details</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>By</value>
+  </data>
+  <data name="AddToCart" xml:space="preserve">
+    <value>Add To Cart</value>
+  </data>
+  <data name="ShareIt" xml:space="preserve">
+    <value>Share It</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>Serial No</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="RelatedProducts" xml:space="preserve">
+    <value>Related Products</value>
+  </data>
+  <data name="QualityAssurance" xml:space="preserve">
+    <value>Quality Assurance</value>
+  </data>
+  <data name="OneHundredPercentQualityGuaranteedProducts" xml:space="preserve">
+    <value>100% quality guaranteed products</value>
+  </data>
+  <data name="WeAreDedicatedToProvidingExceptionalServicesAndProductsToOurCustomers" xml:space="preserve">
+    <value>We are dedicated to providing exceptional services and products to our customers</value>
+  </data>
+  <data name="OurTeamOfProfessionalsWorksTirelesslyToEnsureCustomerSatisfactionThroughInnovativeSolutionsAndQualityCraftsmanship" xml:space="preserve">
+    <value> Our team of professionals works tirelessly to ensure customer satisfaction through innovative solutions and quality craftsmanship</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Page Not Found</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="Fashion" xml:space="preserve">
+    <value>Fashion</value>
+  </data>
+  <data name="DiscoverTimelessEleganceWithOurPremiumWatches" xml:space="preserve">
+    <value>Discover Timeless Elegance with Our Premium Watches</value>
+  </data>
+  <data name="AtVelvoraWatchesWeBelieveAGreatWatchIsMoreThanJustATimepieceItsAStatementOfStyleAndSophistication" xml:space="preserve">
+    <value>At Velvora Watches, we believe a great watch is more than just a timepiece — it's a statement of style and sophistication. 
+  Our curated collection features classic, modern, and luxury designs crafted with precision and passion. Whether you're dressing up for a formal event or looking for a sleek everyday accessory, we have the perfect watch for every occasion.
+  Trusted by thousands of customers worldwide, our watches combine tradition with innovation, making them the ideal gift for yourself or someone special</value>
+  </data>
+  <data name="Bring" xml:space="preserve">
+    <value>Bring</value>
+  </data>
+  <data name="Christmas" xml:space="preserve">
+    <value>Christmas</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="UptoFiftyPercent" xml:space="preserve">
+    <value>upto - 50%</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="ShopNow" xml:space="preserve">
+    <value>Shop Now</value>
+  </data>
+  <data name="GiftBox" xml:space="preserve">
+    <value>Gift Box</value>
+  </data>
+  <data name="GoChristmas" xml:space="preserve">
+    <value>Go Christmas</value>
+  </data>
+  <data name="Chocolate" xml:space="preserve">
+    <value>Chocolate</value>
+  </data>
+  <data name="Specialproducts" xml:space="preserve">
+    <value>Special Products</value>
+  </data>
+  <data name="TopCollection" xml:space="preserve">
+    <value>Top Collection</value>
+  </data>
+  <data name="OmarYousry" xml:space="preserve">
+    <value>Omar Yousry</value>
+  </data>
+  <data name="SendGiftYourLovedOne" xml:space="preserve">
+    <value>SEND GIFT YOUR LOVED ONE</value>
+  </data>
+  <data name="TopCategory" xml:space="preserve">
+    <value>Top Category</value>
+  </data>
+  <data name="FromTheBlog" xml:space="preserve">
+    <value>From The Blog</value>
+  </data>
+  <data name="DotNetDeveloper" xml:space="preserve">
+    <value>.Net Developer</value>
+  </data>
+  <data name="IAmaPassionateJuniorDotNetDeveloperWithHandsOnExperienceInBuildingWebApplicationsUsingAspNetMvcAndEntityFramework" xml:space="preserve">
+    <value>Passionate .NET developer with solid experience in building web applications using MVC and Web API. Skilled in Entity Framework and LINQ, and focused on writing clean, well-structured code using N-Layer </value>
+  </data>
+  <data name="BestSellers" xml:space="preserve">
+    <value>Best Sellers</value>
+  </data>
+  <data name="FeaturedProducts" xml:space="preserve">
+    <value>Featured Products</value>
+  </data>
+  <data name="NewProducts" xml:space="preserve">
+    <value>New Products</value>
+  </data>
+  <data name="ExclusiveProducts" xml:space="preserve">
+    <value>Exclusive Products</value>
+  </data>
+  <data name="NewCollectionOfAwesomeGift" xml:space="preserve">
+    <value>New Collection Of Awesome Gift</value>
+  </data>
+  <data name="EndOfTheYear" xml:space="preserve">
+    <value>End Of The Year</value>
+  </data>
+  <data name="Get" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="ExtraOff" xml:space="preserve">
+    <value>Extra Off</value>
+  </data>
+  <data name="WatchSystem" xml:space="preserve">
+    <value>Watch System</value>
+  </data>
+  <data name="ContentManagement" xml:space="preserve">
+    <value>Content Management</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="WelcomeToOurStoreWatch" xml:space="preserve">
+    <value>Welcome To Our Store Watch</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="GoToAdminPanel" xml:space="preserve">
+    <value>Go To Admin Panel</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="SettingsList" xml:space="preserve">
+    <value>Settings List</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="FacebookLink" xml:space="preserve">
+    <value>Facebook Link</value>
+  </data>
+  <data name="InstagramLink" xml:space="preserve">
+    <value>Instagram Link</value>
+  </data>
+  <data name="TwitterLink" xml:space="preserve">
+    <value>Twitter Link</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>Contact Number</value>
+  </data>
+  <data name="MiddlePanner" xml:space="preserve">
+    <value>Middle Panner</value>
+  </data>
+  <data name="LastPanner" xml:space="preserve">
+    <value>Last Panner</value>
+  </data>
+  <data name="YoutubeLink" xml:space="preserve">
+    <value>Youtube Link</value>
+  </data>
+  <data name="TypeList" xml:space="preserve">
+    <value>Type List</value>
+  </data>
+  <data name="ItemList" xml:space="preserve">
+    <value>Product List</value>
+  </data>
+  <data name="SoldCount" xml:space="preserve">
+    <value>Sold Count</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>Type Name</value>
+  </data>
+  <data name="DiscountPercent" xml:space="preserve">
+    <value>Discount Percent</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="StoreInformation" xml:space="preserve">
+    <value>Store Information</value>
+  </data>
+  <data name="WatchesAreTimekeepingDevicesWornOnTheWristOrCarriedInAPocket" xml:space="preserve">
+    <value> Watches are timekeeping devices worn on the wrist or carried in a pocket. They serve both practical and aesthetic purposes. Here's a detailed description of watches</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>Call Us</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ShowingProductsResult" xml:space="preserve">
+    <value>Showing Products Result</value>
+  </data>
+</root>

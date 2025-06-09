@@ -1,0 +1,30 @@
+﻿@using Domains.Identity
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a id="manage" class="nav-link text-dark" asp-controller="Account" asp-action="Manage" title="Manage">
+                @SystemResources.Hello : @UserManager.GetUserName(User)!
+            </a>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline" method="post" asp-controller="Account" asp-action="Logout">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0 text-dark">@ActionsResources.Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-white" id="register" asp-controller="Account" asp-action="Register">@ActionsResources.Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" id="login" asp-controller="Account" asp-action="Login">@ActionsResources.Login</a>
+        </li>
+    }
+</ul>

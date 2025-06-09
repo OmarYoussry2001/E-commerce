@@ -1,0 +1,132 @@
+﻿
+@model RegisterDto
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>@SystemResources.CreateAccount</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+              
+                        <li class="breadcrumb-item active" aria-current="page">@SystemResources.Home</li>
+                        <li class="breadcrumb-item active" aria-current="page">@SystemResources.CreateAccount</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+
+
+<!--section start-->
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>@SystemResources.CreateAccount</h3>
+                <div class="theme-card"  >
+                    <form class="theme-form" method="post"
+                          asp-controller="Account" asp-action="Register">
+                        <div asp-validation-summary="All"></div>
+
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label asp-for="FirstName">@FormResources.FirstName</label>
+                                <input asp-for="FirstName" type="text" class="form-control" id="fname" placeholder="@FormResources.FirstName"
+                                       required="">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="LastName">@FormResources.LastName</label>
+                                <input asp-for="LastName" type="text" class="form-control" id="lname" placeholder="@FormResources.LastName"
+                                       required="">
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+             
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label asp-for="City">@FormResources.City</label>
+                                <input asp-for="City" type="text" class="form-control" id="City" placeholder="@FormResources.City"
+                                       required="">
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+
+                            @if (User.IsInRole(SD.Roles.Admin))
+                            {
+                                
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                        <label for="roleSelect">@SystemResources.Role</label> 
+                                    <div class="input-group">
+                                        <select asp-for="@Model.Role" asp-items="@(new SelectList(Model.Roles, "Name", "Name"))"
+                                                class="form-select" id="roleSelect">
+                                                <option disabled selected>- @SystemResources.SelectRole -</option> 
+                                        </select>
+                                        <span class="input-group-text">
+                                            <i class="fa fa-chevron-down"></i>
+                                        </span>
+                                    </div>
+                                    <span asp-validation-for="Role" class="text-danger"></span>
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label asp-for="Email">@UserResources.EmailPlaceholder</label>
+                                <input asp-for="Email" type="text" class="form-control" id="email" placeholder="@UserResources.EmailPlaceholder" required="">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Password">@UserResources.PasswordPlaceholder</label>
+                                <input asp-for="Password" type="password" class="form-control" id="review"
+                                       placeholder="@UserResources.PasswordPlaceholder" required="">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="col-md-6">
+                                <label for="review">@SystemResources.PasswordConfirmation</label>
+                                <input asp-for="PasswordConfirmation" type="password" class="form-control" id="review"
+                                       placeholder="@SystemResources.PasswordConfirmation" required="">
+                                <span asp-validation-for="PasswordConfirmation" class="text-danger"></span>
+                            </div>
+                  
+
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 text-right">
+                                <button type="submit" class="btn btn-solid">@SystemResources.CreateAccount</button>
+                            </div>
+                            <div class="col-md-6 text-left">
+                                <a asp-controller="Account" asp-action="Login" class="btn btn-solid">
+                                    @ActionsResources.Back
+                                </a>
+                              
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
